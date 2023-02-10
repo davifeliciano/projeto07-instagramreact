@@ -1,3 +1,4 @@
+import Posts from "./Posts";
 import Stories from "./Stories";
 
 export default function Body() {
@@ -5,6 +6,7 @@ export default function Body() {
     <main>
       <div className="main-container">
         <Stories />
+        <Posts />
       </div>
     </main>
   );
