@@ -483,9 +483,28 @@ main {
 .sidebar-profile {
     display: flex;
     align-items: center;
-    gap: 17px;
+    gap: 15px;
     margin-bottom: 24px;
     font-size: 1.4rem;
+}
+
+.sidebar-profile button {
+    background: none;
+    outline: transparent;
+    border: none;
+    padding: 0;
+}
+
+.sidebar-profile button:hover {
+    cursor: pointer;
+}
+
+.sidebar-profile button:last-child {
+    height: 2rem;
+}
+
+.sidebar-profile ion-icon {
+    font-size: 2rem;
 }
 
 .sidebar-profile img {
