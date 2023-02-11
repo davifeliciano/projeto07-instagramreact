@@ -1,11 +1,14 @@
+import reactStringReplace from "react-string-replace";
 import Comment from "./Comment";
 
 function parseTags(str) {
-  /* Deve procurar matches de /(?:^|\s)([#@]\w*)/g em str,
-     e retornar um array com as substrings de str sem ocorrências
-     e com componentes <a className="hashtag" href="/#">{capturedGroup}</a>
-     para os grupos de captura de cada match, em suas respectivas posições */
-  return str;
+  return reactStringReplace(str, /(?<=^|\s)([#@]\w+)/g, (match, index) => {
+    return (
+      <a className="hashtag" href="/#" key={index}>
+        {match}
+      </a>
+    );
+  });
 }
 
 export default function PostComments(props) {
