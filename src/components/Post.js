@@ -11,7 +11,7 @@ export default function Post(props) {
   const [likeAmount, setLikeAmount] = useState(post.likeAmount);
 
   return (
-    <article className="post">
+    <article className="post" data-test="post">
       <PostHeader author={post.author} />
       <PostMedia
         type={post.type}

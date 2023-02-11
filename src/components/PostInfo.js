@@ -20,7 +20,11 @@ export default function PostInfo(props) {
         </a>{" "}
         e{" "}
         <a className="username" href="/#">
-          outras {props.likeAmount.toLocaleString()} pessoas
+          outras{" "}
+          <span data-test="likes-number">
+            {props.likeAmount.toLocaleString()}
+          </span>{" "}
+          pessoas
         </a>
       </p>
     </div>

@@ -29,19 +29,20 @@ export default function User() {
     <div className="sidebar-profile">
       <button onClick={changeProfilePicSrc}>
         <img
+          className="userinfo"
           src={profilePicSrc}
           alt={`Imagem de perfil de ${username}`}
           width="1000"
-          className="userinfo"
           height="1000"
+          data-test="profile-image"
         />
       </button>
       <div className="userinfo">
-        <a className="username" href="/#">
+        <a className="username" href="/#" data-test="name">
           {username}
         </a>
       </div>
-      <button onClick={changeUsername}>
+      <button onClick={changeUsername} data-test="edit-name">
         <ion-icon name="create-outline"></ion-icon>
       </button>
     </div>

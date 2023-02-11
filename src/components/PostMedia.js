@@ -32,6 +32,7 @@ export default function PostMedia(props) {
           alt={props.description}
           width="1500"
           height="1500"
+          data-test="post-image"
           onDoubleClick={likePost}
         />
       </div>
@@ -51,6 +52,7 @@ export default function PostMedia(props) {
         muted
         width="1080"
         height="1080"
+        data-test="post-image"
         onDoubleClick={likePost}
       >
         {props.src.map((src, index) => {

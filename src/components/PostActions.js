@@ -18,6 +18,7 @@ export default function PostActions(props) {
       <div className="nav-items">
         <button
           className={`like-btn ${like ? "liked" : ""}`}
+          data-test="like-post"
           onClick={toggleLike}
         >
           <ion-icon name={`heart${like ? "" : "-outline"}`}></ion-icon>
@@ -30,7 +31,7 @@ export default function PostActions(props) {
         </button>
       </div>
       <div className="nav-items">
-        <button onClick={toggleSave}>
+        <button data-test="save-post" onClick={toggleSave}>
           <ion-icon name={`bookmark${save ? "" : "-outline"}`}></ion-icon>
         </button>
       </div>
