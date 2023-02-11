@@ -1,9 +1,16 @@
+import { useState } from "react";
+
 export default function PostActions(props) {
   const { like, likeSetter, likeAmount, likeAmountSetter } = props;
+  const [save, setSave] = useState(false);
 
   function toggleLike() {
     like ? likeAmountSetter(likeAmount - 1) : likeAmountSetter(likeAmount + 1);
     likeSetter(!like);
+  }
+
+  function toggleSave() {
+    setSave(!save);
   }
 
   return (
@@ -23,8 +30,8 @@ export default function PostActions(props) {
         </button>
       </div>
       <div className="nav-items">
-        <button>
-          <ion-icon name="bookmark-outline"></ion-icon>
+        <button onClick={toggleSave}>
+          <ion-icon name={`bookmark${save ? "" : "-outline"}`}></ion-icon>
         </button>
       </div>
     </div>
