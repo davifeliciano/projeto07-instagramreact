@@ -326,6 +326,10 @@ main {
     padding-block: 10px;
 }
 
+.post-actions .like-btn.liked {
+    color: red;
+}
+
 .post-info {
     display: flex;
     gap: 5px;
@@ -488,14 +492,14 @@ main {
     font-size: 1.4rem;
 }
 
-.sidebar-profile button {
+:is(.post-actions, .sidebar-profile) button {
     background: none;
     outline: transparent;
     border: none;
     padding: 0;
 }
 
-.sidebar-profile button:hover {
+:is(.post-actions, .sidebar-profile) button:hover {
     cursor: pointer;
 }
 

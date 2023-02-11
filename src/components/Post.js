@@ -3,9 +3,12 @@ import PostMedia from "./PostMedia";
 import PostActions from "./PostActions";
 import PostInfo from "./PostInfo";
 import PostComments from "./PostComments";
+import { useState } from "react";
 
 export default function Post(props) {
   const { post } = props;
+  const [like, setLike] = useState(false);
+  const [likeAmount, setLikeAmount] = useState(post.likeAmount);
 
   return (
     <article className="post">
@@ -14,9 +17,18 @@ export default function Post(props) {
         type={post.type}
         src={post.src}
         description={post.description}
+        like={like}
+        likeSetter={setLike}
+        likeAmount={likeAmount}
+        likeAmountSetter={setLikeAmount}
       />
-      <PostActions />
-      <PostInfo likedBy={post.likedBy} likeAmount={post.likeAmount} />
+      <PostActions
+        like={like}
+        likeSetter={setLike}
+        likeAmount={likeAmount}
+        likeAmountSetter={setLikeAmount}
+      />
+      <PostInfo likedBy={post.likedBy} likeAmount={likeAmount} />
       <PostComments
         author={post.author}
         description={post.description}
