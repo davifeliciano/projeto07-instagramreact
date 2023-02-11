@@ -11,6 +11,8 @@
     --border-color: #DBDBDB;
     --username-color: #262626;
     --secondary-text-color: #8E8E8E;
+    --like-animation-start-size: 20rem;
+    --like-animation-bigger-size: 30rem;
 }
 
 html {
@@ -270,15 +272,8 @@ main {
     font-size: 1.4rem;
 }
 
-.post>*:not(img) {
+.post>*:not(.post-media) {
     padding-inline: 17px;
-}
-
-.post>img,
-.post>video {
-    width: 100%;
-    height: auto;
-    padding: 0;
 }
 
 .post .username,
@@ -317,6 +312,45 @@ main {
 
 .post-options ion-icon {
     font-size: 16px;
+}
+
+.post-media {
+    padding: 0;
+    position: relative;
+}
+
+.post-media .like-icon {
+    fill: white;
+    width: var(--like-animation-start-size);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: like-animation 800ms ease-in-out forwards;
+}
+
+@keyframes like-animation {
+    40% {
+        width: var(--like-animation-bigger-size);
+    }
+
+    80% {
+        width: var(--like-animation-start-size);
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.post-media .like-icon.hidden {
+    display: none;
+}
+
+.post-media :is(img, video) {
+    width: 100%;
+    height: auto;
+    padding: 0;
 }
 
 .post-actions {
