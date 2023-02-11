@@ -360,10 +360,6 @@ main {
     padding-block: 10px;
 }
 
-.post-actions .like-btn.liked {
-    color: red;
-}
-
 .post-info {
     display: flex;
     gap: 5px;
@@ -417,6 +413,10 @@ main {
 
 .comment ion-icon {
     font-size: 1rem;
+}
+
+:is(.post-actions, .comment) .like-btn.liked {
+    color: red;
 }
 
 .post-new-comment {
@@ -526,14 +526,14 @@ main {
     font-size: 1.4rem;
 }
 
-:is(.post-actions, .sidebar-profile) button {
+:is(.post-actions, .comment, .sidebar-profile) button {
     background: none;
     outline: transparent;
     border: none;
     padding: 0;
 }
 
-:is(.post-actions, .sidebar-profile) button:hover {
+:is(.post-actions, .comment, .sidebar-profile) button:hover {
     cursor: pointer;
 }
 
